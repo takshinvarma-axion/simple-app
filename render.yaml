@@ -9,6 +9,10 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.0"
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: deepseek/deepseek-v4-flash:free
     plan: free
 
   # React — free static site

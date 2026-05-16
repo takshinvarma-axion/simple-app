@@ -87,7 +87,7 @@ export default function App() {
       <div className="header">
         <div className="header-dot" />
         <h1>AI Chat</h1>
-        <span className="header-model">gpt-4o-mini · Azure OpenAI</span>
+        <span className="header-model">DeepSeek V4 Flash · OpenRouter</span>
       </div>
 
       <div className="messages">
