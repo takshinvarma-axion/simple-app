@@ -12,7 +12,7 @@ services:
       - key: OPENROUTER_API_KEY
         sync: false
       - key: OPENROUTER_MODEL
-        value: deepseek/deepseek-v4-flash:free
+        value: google/gemma-4-31b-it:free
     plan: free
 
   # React — free static site
