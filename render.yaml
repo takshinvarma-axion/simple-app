@@ -1,0 +1,30 @@
+services:
+  # Flask API — free web service
+  - type: web
+    name: notes-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+    plan: free
+
+  # React — free static site
+  - type: web
+    name: notes-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      # Set this to your deployed API URL after first deploy, e.g.:
+      # https://notes-api.onrender.com
+      - key: VITE_API_URL
+        value: ""
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    plan: free
